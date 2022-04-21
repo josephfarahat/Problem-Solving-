@@ -1,0 +1,11 @@
+ostream& operator<< (ostream&o,Person p){
+    
+    
+    o<<"first_name=";
+    o<<p.get_first_name();
+    o<<",";
+    o<<"last_name=";
+    o<<p.get_last_name();
+    
+    return o;
+}
