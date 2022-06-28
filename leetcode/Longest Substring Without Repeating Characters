@@ -1,24 +1,31 @@
 class Solution {
 public:
-    ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
-        
-        ListNode*res,*temp;
-        res=NULL;temp=NULL;
-        int first,second ,carry=0;
-        while(l1||l2||carry!=0)
-        {
-            if(l1){first =l1->val; l1=l1->next;}
-            else {first =0;}
-            if(l2){second=l2->val;l2=l2->next;}
-            else{second=0;}
-             int v=first +second+carry;
+    int lengthOfLongestSubstring(string s) {
             
-            if(res==NULL){res=new ListNode(v%10);temp=res;}
-            else{temp->next=new ListNode(v%10);temp=temp->next;}
-            carry=v/10;   
-        }
-        
-        return res;     
-        
+set<char> hst;
+ int apointer=0;
+ int bpointer=0;
+ int mx=0;
+ int si;
+ while(bpointer<s.length()){
+ if(hst.find(s[bpointer])==hst.end()){
+    
+     hst.insert(s[bpointer]);
+     bpointer++;
+     si=hst.size();
+     if(mx<si){mx=si;}
+          
+ }
+else {
+    
+    hst.erase(s[apointer]);
+    apointer++;
+    
+}
+     
+ }
+     
+   return mx;  
+             
     }
 };
