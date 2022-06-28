@@ -1,0 +1,21 @@
+class Solution {
+public:
+    ListNode* reverseList(ListNode* head) {
+        stack <int>v;
+        ListNode* l=head;
+        while(l!=NULL){
+        v.push(l->val);
+        l=l->next;   
+        }
+        
+        l=head;
+        while (!v.empty()){
+            head->val=v.top();
+            v.pop();
+            head=head->next;
+            
+        }
+    return l;
+    }
+    
+};
