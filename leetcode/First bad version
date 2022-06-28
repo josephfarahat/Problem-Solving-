@@ -1,0 +1,12 @@
+class Solution {
+public:
+    int firstBadVersion(int n) {
+        bool t=true;
+        while(t){
+        t=isBadVersion(n-1);    
+            
+            n--;
+        }
+     return n+1;   
+    }
+};
